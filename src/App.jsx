@@ -9,6 +9,14 @@ import BloqueNoticias from "./BloqueNoticias";
 function App() {
   const[noticias, setNoticias] = useState([])
 
+  const consultarApi = async (categoria) =>{
+    try{
+      const respuesta = await fetch("https://newsdata.io/api/1/news?apikey=pub_24021f4291fa33aa976aa3dddd22e4c75cb40&language=es&category="+categoria)
+    }
+    catch(errores){
+      console.log(errores)
+    }
+  }
   return (
     <>
     <Container id='containerPrincipal'>
