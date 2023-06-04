@@ -9,7 +9,7 @@ const CardNoticia = ({ noticia }) => {
             <Card.Img variant="top" src={noticia.image_url} alt="imagen de la noticia"></Card.Img>
             <Card.Body>
                 <Card.Title>{noticia.title}</Card.Title>
-                <h6 className="lead fs-6">Fuente:{noticia.source_id}</h6>
+                <h6 className="lead fs-6">Fuente: {noticia.source_id}</h6>
                 <hr className="my-1"/>
                 <Card.Text className="descripcionNoticia">{noticia.description}</Card.Text>
                 <a variant="primary" href={noticia.link}>Ver noticia completa</a>

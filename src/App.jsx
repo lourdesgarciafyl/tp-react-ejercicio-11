@@ -9,10 +9,6 @@ import BloqueNoticias from "./components/BloqueNoticias";
 function App() {
   const[noticias, setNoticias] = useState([])
 
-  const seleccionarCategoria = (categoria) =>{
-    consultarApi(categoria)
-  }
-
   const consultarApi = async (categoria) =>{
     try{
       const respuesta = await fetch("https://newsdata.io/api/1/news?apikey=pub_24021f4291fa33aa976aa3dddd22e4c75cb40&language=es&category="+categoria)
@@ -30,7 +26,7 @@ function App() {
     <Container id='containerPrincipal'>
       <h1 className="display-5 text-center my-3">Web de noticias</h1>
       <hr />
-      <FormularioNoticias consultarApi={consultarApi} seleccionarCategoria={seleccionarCategoria}></FormularioNoticias>
+      <FormularioNoticias consultarApi={consultarApi}></FormularioNoticias>
       <BloqueNoticias noticias={noticias}></BloqueNoticias>
     </Container>
     <footer className='bg-dark text-light text-center py-3'>
