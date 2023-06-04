@@ -10,3 +10,8 @@
 #formSelect{
     width: fit-content;
 }
+.descripcionNoticia{
+    max-height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
