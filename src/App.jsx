@@ -9,6 +9,7 @@ function App() {
     <>
     <Container id='containerPrincipal'>
       <h1 className="display-5 text-center my-3">Web de noticias</h1>
+      <hr />
       <FormularioNoticias></FormularioNoticias>
     </Container>
     <footer className='bg-dark text-light text-center py-3'>

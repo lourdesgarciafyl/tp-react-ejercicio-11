@@ -7,3 +7,6 @@
   #containerPrincipal{
     flex-grow: 1;
   }
+#formSelect{
+    width: fit-content;
+}

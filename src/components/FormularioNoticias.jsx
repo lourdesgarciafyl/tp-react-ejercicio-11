@@ -9,12 +9,12 @@ const FormularioNoticias = () => {
       }
 
     return (
-        <Form noValidate onSubmit={handleSubmit(apretarEnviar)}>
-            <Form.Group>
-                <Form.Label>Buscar noticias por categoría</Form.Label>
-                <Form.Select {...register(`categoria`, {
-                required: "Campo obligatorio"
-            })}>
+        <section>
+            <Form noValidate onSubmit={handleSubmit(apretarEnviar)} className="d-flex flex-row justify-content-center">
+                    <Form.Label className="mt-1">Buscar por categoría:</Form.Label>
+                    <Form.Select  className="mx-2" id="formSelect" {...register(`categoria`, {
+                    required: "Campo obligatorio"
+                     })}>
                 <option value="">--Seleccione un genero--</option>
                 <option value="aventura">Aventura</option>
                 <option value="biografico">Biográfico</option>
@@ -24,11 +24,11 @@ const FormularioNoticias = () => {
                 <option value="terror">Terror</option>
                 </Form.Select>
                 <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
-            </Form.Group>
-            <Button className="mt-3" variant="primary" type="submit">
-              Buscar
-           </Button>
+                    <Button className="ms-1" variant="primary" type="submit">
+                     Buscar
+                    </Button>
         </Form>
+        </section>
     )
 }
 
