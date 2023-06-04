@@ -1,6 +1,6 @@
-import { Form, Col, Row, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import BloqueNoticias from "./BloqueNoticias";
+
 
 const FormularioNoticias = () => {
     const { register, formState: {errors}, reset , handleSubmit} = useForm()
@@ -29,7 +29,6 @@ const FormularioNoticias = () => {
                      Buscar
                     </Button>
         </Form>
-        <BloqueNoticias></BloqueNoticias>
         </section>
     )
 }
