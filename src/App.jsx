@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import FormularioNoticias from './components/FormularioNoticias';
-import BloqueNoticias from "./BloqueNoticias";
+import BloqueNoticias from "./components/BloqueNoticias";
 
 
 function App() {

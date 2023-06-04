@@ -1,33 +1,25 @@
-import { Form, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { Form } from "react-bootstrap";
 
 
-const FormularioNoticias = () => {
-    const { register, formState: {errors}, reset , handleSubmit} = useForm()
-
-    const apretarEnviar = (data) => {
-        reset()
-      }
+const FormularioNoticias = ({consultarApi }) => {
+    const [categoria, setCategoria] = useState("")
 
     return (
         <section>
-            <Form noValidate onSubmit={handleSubmit(apretarEnviar)} className="d-flex flex-column align-items-center flex-md-row justify-content-md-center">
-                    <Form.Label className="mt-1">Buscar por categoría:</Form.Label>
-                    <Form.Select  className="mx-2" id="formSelect" {...register(`categoria`, {
-                    required: "Campo obligatorio"
-                     })}>
-                <option value="">--Seleccione un genero--</option>
-                <option value="aventura">Aventura</option>
-                <option value="biografico">Biográfico</option>
-                <option value="comedia">Comedia</option>
-                <option value="drama">Drama</option>
-                <option value="romance">Romance</option>
-                <option value="terror">Terror</option>
+            <Form className="d-flex flex-column align-items-center flex-md-row justify-content-md-center">
+                <Form.Group>
+                <Form.Label className="mt-1">Buscar por categoría:</Form.Label>
+                <Form.Select  className="mx-2" id="formSelect">
+                <option value="">--Seleccione una categoria--</option>
+                <option value="top">Destacadas</option>
+                <option value="science">Ciencia</option>
+                <option value="sports">Deportes</option>
+                <option value="entertainment">Entretenimiento</option>
+                <option value="politics">Politica</option>
+                <option value="technology">Tecnología</option>
                 </Form.Select>
-                <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
-                    <Button className="ms-1" id="btnBuscar" variant="primary" type="submit">
-                     Buscar
-                    </Button>
+                </Form.Group>
         </Form>
         </section>
     )
